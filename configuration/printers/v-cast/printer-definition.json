@@ -12,20 +12,12 @@
 		"Standard": {
 			"x": 300,
 			"y": 300,
-			"z": 300,
-			"name": "standard"
-		},
-		"Wideboy": {
-			"x": 300,
-			"y": 300,
-			"z": 300,
-			"name": "wideboy"
+			"z": 300
 		},
 		"High-Z": {
 			"x": 300,
 			"y": 300,
-			"z": 400,
-			"name": "high-z"
+			"z": 400
 		}
 	},
 	"bedMargin": {

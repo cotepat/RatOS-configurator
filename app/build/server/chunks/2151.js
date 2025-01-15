@@ -14,7 +14,7 @@ ${r.renderBoards()}
 #############################################################################################################
 ${r.renderBase()}
 [include RatOS/printers/v-cast/v-cast.cfg]
-[include RatOS/printers/v-cast/${e.size.name}.cfg]
+[include RatOS/printers/v-cast/${e.size.z}Z.cfg]
 [include RatOS/printers/v-cast/macros.cfg]
 
 # Extruder
