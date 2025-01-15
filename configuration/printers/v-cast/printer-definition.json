@@ -5,7 +5,7 @@
 	"manufacturer": "Rat Rig Lab",
 	"releaseDate": "2020-09-01",
 	"documentationLink": "https://lab.ratrig.com/vcast_1_0/",
-	"image": "v-cast-idex.png",
+	"image": "v-cast.png",
 	"template": "v-cast-printer.template.cfg",
 	"driverCountRequired": 5,
 	"sizes": {
