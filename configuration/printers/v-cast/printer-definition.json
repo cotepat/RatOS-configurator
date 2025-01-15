@@ -9,15 +9,20 @@
 	"template": "v-cast-printer.template.cfg",
 	"driverCountRequired": 5,
 	"sizes": {
-		"Standard": {
+		"300Z": {
 			"x": 300,
 			"y": 300,
 			"z": 300
 		},
-		"High-Z": {
+		"400Z": {
 			"x": 300,
 			"y": 300,
 			"z": 400
+		},
+		"WIDE": {
+			"x": 300,
+			"y": 300,
+			"z": 300
 		}
 	},
 	"bedMargin": {
