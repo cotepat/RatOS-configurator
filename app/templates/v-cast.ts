@@ -146,8 +146,8 @@ ${helper.renderUserStepperSections({
 			'pid_kp: 21.673',
 			'pid_ki: 1.338',
 			'pid_kd: 87.776',
-		]
-	}
+		],
+	},
 })}
 
 [heater_bed]
