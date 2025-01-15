@@ -250,8 +250,8 @@ variable_shaper_y_type: ["mzv", "mzv", "mzv", "mzv"]   # shaper frequency algory
 ${helper.renderSaveVariables({
 	xcontrolpoint: config.size.x / 2 - 50,
 	ycontrolpoint: config.size.y + 25,
-	zcontrolpoint: 100,
-	zoffsetcontrolpoint: 100,
+	zcontrolpoint: 10,
+	zoffsetcontrolpoint: 5,
 })}
 
 [gcode_macro _VAOC]

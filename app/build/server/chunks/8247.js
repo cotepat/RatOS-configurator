@@ -245,7 +245,7 @@ variable_shaper_x_type: ["mzv", "mzv", "mzv", "mzv"]   # shaper frequency algory
 variable_shaper_y_type: ["mzv", "mzv", "mzv", "mzv"]   # shaper frequency algorythm [T0, T1, COPY, MIRROR]
 
 # Save variables
-${r.renderSaveVariables({xcontrolpoint:e.size.x/2-50,ycontrolpoint:e.size.y+25,zcontrolpoint:100,zoffsetcontrolpoint:100})}
+${r.renderSaveVariables({xcontrolpoint:e.size.x/2-50,ycontrolpoint:e.size.y+25,zcontrolpoint:10,zoffsetcontrolpoint:5})}
 
 [gcode_macro _VAOC]
 variable_expected_camera_x_position: ${e.size.x/2-50}
