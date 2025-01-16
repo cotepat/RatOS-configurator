@@ -9,15 +9,15 @@
 	"template": "v-cast-idex-printer.template.cfg",
 	"driverCountRequired": 7,
 	"sizes": {
-		"305": {
-			"x": 305,
-			"y": 305,
-			"z": 250
+		"300": {
+			"x": 300,
+			"y": 300,
+			"z": 300
 		}
 	},
 	"bedMargin": {
 		"x": [50, 50],
-		"y": [6.5, 25]
+		"y": [10, 10]
 	},
 	"speedLimits": {
 		"basic": {
