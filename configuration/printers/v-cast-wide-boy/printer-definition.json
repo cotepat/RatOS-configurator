@@ -1,7 +1,7 @@
 {
 	"$schema": "../printer-definition.schema.json",
-	"name": "V-Cast Wide Boy",
-	"description": "The Wide Boy frame provides additional X space (+100mm) to IDEX strollers!",
+	"name": "V-Cast Wide Boy - IDEX",
+	"description": "Configure IDEX toolhead using comments in printer.cfg",
 	"manufacturer": "Rat Rig Lab",
 	"releaseDate": "2020-09-01",
 	"documentationLink": "https://lab.ratrig.com/vcast_1_0/",
