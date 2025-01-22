@@ -27,11 +27,11 @@ ${helper.renderHotend()}
 # ADXL345 resonance testing configuration
 ${helper.renderInputShaper(config.size)}
 
+
 #############################################################################################################
 ### STEPPER MOTORS, DRIVERS & SPEED LIMITS
 #############################################################################################################
 ${helper.renderMotorSections()}
-
 ${helper.renderSpeedLimits()}
 
 [bed_mesh]
@@ -45,6 +45,7 @@ speed: ${helper.getMacroTravelSpeed()}
 #############################################################################################################
 ${helper.renderProbeIncludes()}
 ${helper.renderEndstopSection()}
+
 
 #############################################################################################################
 ### FANS
@@ -99,8 +100,8 @@ variable_pause_print_park_in: "front"
 ### 3) Skew Correction: https://www.klipper3d.org/Skew_Correction.html
 ### 4) Resonance Compensation: https://www.klipper3d.org/Resonance_Compensation.html
 ### RatOS has dedicated macro's to generate shaper graphs for deeper analysis (requires accelerometer).
-### Use GENERATE_SHAPER_GRAPHS to generate the resonance graphs for analysing and manually entering 
-### input shaper configuration.
+### Use GENERATE_SHAPER_GRAPHS to generate the resonance graphs for analysing and manually entering input
+### shaper configuration.
 ### You can run SHAPER_CALIBRATE to automatically calibrate your input shaper configuration, if you just want
 ### to get started.
 ### Additionally, you can use the Realtime Analysis Tool to analyze your printer's performance in real-time.
@@ -109,7 +110,7 @@ variable_pause_print_park_in: "front"
 
 ${helper.renderUserStepperSections({
 	x: {
-		directionInverted: false,
+		directionInverted: true,
 		rotationComment: '40 for 20 tooth 2GT pulleys, 32 for 16 tooth 2GT pulleys',
 		limits: (margin) => ({
 			min: 0 - margin.min,
@@ -130,12 +131,12 @@ ${helper.renderUserStepperSections({
 		directionInverted: true,
 		rotationComment: '4 for TR8*4 lead screws',
 		limits: {
-			min: -1,
+			min: 0,
 			max: config.size.z,
 		},
 	},
 	z1: {
-		directionInverted: false,
+		directionInverted: true,
 		rotationComment: '4 for TR8*4 lead screws',
 	},
 	extruder: {

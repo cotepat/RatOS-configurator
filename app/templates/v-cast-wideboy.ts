@@ -27,11 +27,11 @@ ${helper.renderHotend()}
 # ADXL345 resonance testing configuration
 ${helper.renderInputShaper(config.size)}
 
+
 #############################################################################################################
 ### STEPPER MOTORS, DRIVERS & SPEED LIMITS
 #############################################################################################################
 ${helper.renderMotorSections()}
-
 ${helper.renderSpeedLimits()}
 
 [bed_mesh]
@@ -45,6 +45,7 @@ speed: ${helper.getMacroTravelSpeed()}
 #############################################################################################################
 ${helper.renderProbeIncludes()}
 ${helper.renderEndstopSection()}
+
 
 #############################################################################################################
 ### FANS
@@ -72,6 +73,21 @@ export const initialPrinterCfg = (config: PrinterConfiguration, helper: KlipperC
 [include RatOS.cfg]
 
 #############################################################################################################
+### MACRO CONFIGURATION
+### Configure the behavior of RatOS macros
+### See: https://os.ratrig.com/docs/configuration/macros
+#############################################################################################################
+[gcode_macro RatOS]
+variable_relative_extrusion: True
+variable_preheat_extruder: True
+variable_calibrate_bed_mesh: True
+variable_nozzle_priming: "primeblob"
+variable_start_print_park_in: "front"
+variable_start_print_park_z_height: 50
+variable_end_print_park_in: "back"
+variable_pause_print_park_in: "front"
+
+#############################################################################################################
 ### USER OVERRIDES & CUSTOM CONFIGURATION
 ### Anything custom you want to add, or RatOS configuration you want to override, do it here.
 ### This section is pre-populated with the most common settings you may want to change.
@@ -84,8 +100,8 @@ export const initialPrinterCfg = (config: PrinterConfiguration, helper: KlipperC
 ### 3) Skew Correction: https://www.klipper3d.org/Skew_Correction.html
 ### 4) Resonance Compensation: https://www.klipper3d.org/Resonance_Compensation.html
 ### RatOS has dedicated macro's to generate shaper graphs for deeper analysis (requires accelerometer).
-### Use GENERATE_SHAPER_GRAPHS to generate the resonance graphs for analysing and manually entering 
-### input shaper configuration.
+### Use GENERATE_SHAPER_GRAPHS to generate the resonance graphs for analysing and manually entering input
+### shaper configuration.
 ### You can run SHAPER_CALIBRATE to automatically calibrate your input shaper configuration, if you just want
 ### to get started.
 ### Additionally, you can use the Realtime Analysis Tool to analyze your printer's performance in real-time.
@@ -94,7 +110,7 @@ export const initialPrinterCfg = (config: PrinterConfiguration, helper: KlipperC
 
 ${helper.renderUserStepperSections({
 	x: {
-		directionInverted: false,
+		directionInverted: true,
 		rotationComment: '40 for 20 tooth 2GT pulleys, 32 for 16 tooth 2GT pulleys',
 		limits: (margin) => ({
 			min: 0 - margin.min,
@@ -112,15 +128,15 @@ ${helper.renderUserStepperSections({
 		}),
 	},
 	z: {
-		directionInverted: false,
+		directionInverted: true,
 		rotationComment: '4 for TR8*4 lead screws',
 		limits: {
-			min: -1,
+			min: 0,
 			max: config.size.z,
 		},
 	},
 	z1: {
-		directionInverted: false,
+		directionInverted: true,
 		rotationComment: '4 for TR8*4 lead screws',
 	},
 	extruder: {
