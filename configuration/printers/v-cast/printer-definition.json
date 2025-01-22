@@ -94,7 +94,7 @@
 				"homingSpeed": 10,
 				"performanceMode": {
 					"current": 1.188
-				},
+				}
 			},
 			{
 				"axis": "z1",
@@ -106,7 +106,7 @@
 				"microstepping": 16,
 				"performanceMode": {
 					"current": 1.188
-				},
+				}
 			},
 			{
 				"axis": "extruder",

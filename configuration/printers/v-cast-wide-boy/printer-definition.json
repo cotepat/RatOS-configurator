@@ -9,15 +9,10 @@
 	"template": "v-cast-wide-boy-printer.template.cfg",
 	"driverCountRequired": 5,
 	"sizes": {
-		"300-Z": {
+		"300": {
 			"x": 305,
 			"y": 305,
 			"z": 300
-		},
-		"400-Z": {
-			"x": 305.01,
-			"y": 305,
-			"z": 400
 		}
 	},
 	"bedMargin": {
@@ -94,7 +89,7 @@
 				"homingSpeed": 10,
 				"performanceMode": {
 					"current": 1.188
-				},
+				}
 			},
 			{
 				"axis": "z1",
@@ -106,7 +101,7 @@
 				"microstepping": 16,
 				"performanceMode": {
 					"current": 1.188
-				},
+				}
 			},
 			{
 				"axis": "extruder",
