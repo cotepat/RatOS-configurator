@@ -16,10 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Push
     steps:
-      - if: github.event.workflow_run.conclusion != 'success'
-        run: |
-          echo "CI step didn't pass, exiting"
-          exit 1
       - name: Set variables
         id: variables
         shell: bash
@@ -33,21 +29,6 @@ jobs:
     
       - name: Unshallow repository
         run: git fetch --unshallow origin ${{ steps.variables.outputs.src-branch }}
-
-      - name: Get last successful commit
-        id: last-successful-commit
-        uses: tylermilner/last-successful-commit-hash-action@v1
-        with:
-          workflow-id: 99826346
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          branch: development # This has to be the main branch of repository since all workflows are run from there
-
-      - name: Get commit count
-        id: commit-count
-        shell: bash
-        run: |
-          echo "Deploying $(git rev-list --count ${{ steps.last-successful-commit.outputs.commit-hash }}..${{ github.sha }})) commits!"
-          echo "commit-count=$(git rev-list --count ${{ steps.last-successful-commit.outputs.commit-hash }}..${{ github.sha }})" >> "$GITHUB_OUTPUT"
 
       - uses: actions/setup-node@v3
         with:

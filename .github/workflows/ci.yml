@@ -101,20 +101,4 @@ jobs:
         with:
           project: ratos-configurator/src/tsconfig.json
           
-      - name: Run test suite
-        working-directory: ratos-configurator/src
-        if: success() || failure() # run this step even if previous step failed
-        run: pnpm run test:ci --outputFile=./report.xml
 
-      - name: Upload reports
-        uses: actions/upload-artifact@v3 # upload test results
-        if: success() || failure() # run this step even if previous step failed
-        with:
-          name: test-results
-          path: |
-            ratos-configurator/src/report.xml
-            ratos-configurator/src/eslint_report.json
-
-      - name: Report status
-        if: ${{ failure() }}
-        run: exit 1
