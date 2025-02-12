@@ -101,15 +101,6 @@ jobs:
         with:
           project: ratos-configurator/src/tsconfig.json
           
-      - name: Upload reports
-        uses: actions/upload-artifact@v4 # upload test results
-        if: success() || failure() # run this step even if previous step failed
-        with:
-          name: test-results
-          path: |
-            ratos-configurator/src/report.xml
-            ratos-configurator/src/eslint_report.json
-
       - name: Report status
         if: ${{ failure() }}
         run: exit 1
